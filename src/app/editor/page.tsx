@@ -3,6 +3,7 @@
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   Bold,
   Italic,
@@ -14,6 +15,7 @@ import {
   Code,
   Undo,
   Redo,
+  ArrowLeft,
 } from 'lucide-react';
 
 const MenuBar = ({ editor }: { editor: any }) => {
@@ -98,6 +100,7 @@ const MenuBar = ({ editor }: { editor: any }) => {
 };
 
 export default function EditorPage() {
+    const router = useRouter();
     const [ws, setWs] = useState<WebSocket | null>(null);
     const [connected, setConnected] = useState(false);
     const [onlineUsers, setOnlineUsers] = useState(0);
@@ -151,7 +154,17 @@ export default function EditorPage() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">協作編輯器 Demo</h1>
+      <div className="flex items-center gap-4 mb-4">
+        <button
+          onClick={() => router.push('/Home')}
+          className="flex items-center gap-2 p-2 rounded hover:bg-gray-100"
+          title="返回首頁"
+        >
+          <ArrowLeft size={20} />
+          <span>返回首頁</span>
+        </button>
+        <h1 className="text-2xl font-bold">協作編輯器 Demo</h1>
+      </div>
       <div className="mb-2 flex gap-4">
         <div>連接狀態: {connected ? '已連接' : '未連接'}</div>
         <div>在線人數: {onlineUsers}</div>

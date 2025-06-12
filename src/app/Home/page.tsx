@@ -2,8 +2,10 @@
 
 import { useState } from 'react';
 import styles from './Home.module.css';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const router = useRouter();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   return (
@@ -20,7 +22,7 @@ export default function Home() {
           <h1>協作文檔知識庫</h1>
         </div>
         <div className={styles.navRight}>
-          <button className={styles.newDocButton}>新建文檔</button>
+          <button className={styles.newDocButton} onClick={() => router.push('/editor')}>新建文檔</button>
           <div className={styles.userProfile}>👤</div>
         </div>
       </nav>
