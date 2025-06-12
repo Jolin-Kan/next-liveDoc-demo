@@ -1,0 +1,175 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  height: 60px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navLeft h1 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.newDocButton {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.newDocButton:hover {
+  background-color: #1557b0;
+}
+
+.userProfile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.mainContent {
+  display: flex;
+  margin-top: 60px;
+  flex: 1;
+}
+
+.sidebar {
+  width: 280px;
+  background-color: #f8f9fa;
+  border-right: 1px solid #e0e0e0;
+  transition: transform 0.3s ease;
+  height: calc(100vh - 60px);
+  position: fixed;
+  left: 0;
+}
+
+.sidebar.closed {
+  transform: translateX(-280px);
+}
+
+.sidebarContent {
+  padding: 20px;
+}
+
+.sidebarSection {
+  margin-bottom: 30px;
+}
+
+.sidebarSection h3 {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.sidebarSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebarSection li {
+  padding: 8px 0;
+  color: #333;
+  cursor: pointer;
+}
+
+.sidebarSection li:hover {
+  color: #1a73e8;
+}
+
+.content {
+  flex: 1;
+  padding: 40px;
+  margin-left: 280px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.closed + .content {
+  margin-left: 0;
+}
+
+.welcomeSection {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.welcomeSection h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.welcomeSection p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.welcomeSection ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.welcomeSection li {
+  padding: 10px 0;
+  color: #555;
+}
+
+.startButton {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.startButton:hover {
+  background-color: #1557b0;
+} 
